@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
     }
     fun onClickTest(view: View) {
         val TextTest = findViewById<TextView>(R.id.TextTest)
-        TextTest.text = "Вита учит Котлин"
+        TextTest.text = "Vita moment"
 
     }
 }
