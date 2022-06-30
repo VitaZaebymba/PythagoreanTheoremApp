@@ -14,8 +14,8 @@ class MainActivity : AppCompatActivity() {
 
     }
     fun onClickTest(view: View) {
-        val TextTest = findViewById<TextView>(R.id.TextTest)
-        TextTest.text = "Vita moment"
+        val textTest = findViewById<TextView>(R.id.textTest)
+        textTest.text = "Vita moment"
 
     }
 }
