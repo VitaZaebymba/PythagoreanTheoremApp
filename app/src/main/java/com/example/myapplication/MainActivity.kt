@@ -13,9 +13,15 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
     }
+
     fun onClickTest(view: View) {
         val textTest = findViewById<TextView>(R.id.textTest)
         textTest.text = "Vita moment"
-
     }
+
+    fun onClickTest2 (view: View){
+        val buttonTest2 = findViewById<TextView>(R.id.buttonTest2)
+        buttonTest2.text = "Test"
+    }
+
 }
