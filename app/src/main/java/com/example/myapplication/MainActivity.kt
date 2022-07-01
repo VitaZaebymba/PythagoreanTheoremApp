@@ -7,10 +7,13 @@ import android.view.View
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
+        var text: TextView? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        text = findViewById(R.id.text3)
+        text?.text = "PIZZA"
 
     }
 
