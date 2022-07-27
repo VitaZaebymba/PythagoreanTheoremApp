@@ -6,20 +6,31 @@ import android.util.Log
 import android.view.View
 import android.widget.Button
 import android.widget.TextView
+import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-        lateinit var tv: TextView
-        lateinit var button: Button
+     lateinit var bindingClass: ActivityMainBinding
+     val a = 324
+     val b = 34
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
-        tv = findViewById(R.id.textTest)
-        button =findViewById(R.id.buttonTest)
+        bindingClass = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(bindingClass.root)
 
-       button.setOnClickListener {
-            tv.text = "Vita moment"
-       }
+        bindingClass.b1.setOnClickListener {
+            val result = a + b
+            bindingClass.txRes.text = result.toString()
+        }
+        bindingClass.b2.setOnClickListener {
+            val result = a - b
+            bindingClass.txRes.text = result.toString()
+        }
+        bindingClass.b3.setOnClickListener {
+            val result = a * b
+            bindingClass.txRes.text = result.toString()
+        }
+
 
     }
 
