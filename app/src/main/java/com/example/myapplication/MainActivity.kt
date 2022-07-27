@@ -7,7 +7,7 @@ import android.view.View
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
-        var text: TextView? = null
+        lateinit var text: TextView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
