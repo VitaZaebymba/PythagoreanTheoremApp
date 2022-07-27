@@ -4,26 +4,27 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
+import android.widget.Button
 import android.widget.TextView
 
 class MainActivity : AppCompatActivity() {
-        lateinit var text: TextView
+        lateinit var tv: TextView
+        lateinit var button: Button
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        text = findViewById(R.id.text3)
+        tv = findViewById(R.id.textTest)
+        button =findViewById(R.id.buttonTest)
 
-        text.setOnClickListener{
-            var textTest = findViewById<TextView>(R.id.textTest)
-            textTest.text = "Vita moment"
-        }
-
-    }
-
-    fun onClickTest(view: View) {
+       button.setOnClickListener {
+            tv.text = "Vita moment"
+       }
 
     }
 
+    override fun onPause() {
+        super.onPause()
+    }
 
 }
