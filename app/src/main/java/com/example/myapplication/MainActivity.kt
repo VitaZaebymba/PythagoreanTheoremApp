@@ -13,18 +13,17 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         text = findViewById(R.id.text3)
-        text?.text = "PIZZA"
+
+        text.setOnClickListener{
+            var textTest = findViewById<TextView>(R.id.textTest)
+            textTest.text = "Vita moment"
+        }
 
     }
 
     fun onClickTest(view: View) {
-        val textTest = findViewById<TextView>(R.id.textTest)
-        textTest.text = "Vita moment"
+
     }
 
-    fun onClickTest2 (view: View){
-        val buttonTest2 = findViewById<TextView>(R.id.buttonTest2)
-        buttonTest2.text = "Test"
-    }
 
 }
