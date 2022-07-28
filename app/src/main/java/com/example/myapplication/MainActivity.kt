@@ -1,65 +1,49 @@
 package com.example.myapplication
 
-import android.graphics.Color
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.view.View
-import android.widget.Button
-import android.widget.TextView
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-     lateinit var bindingClass: ActivityMainBinding
+    lateinit var bindingClass: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
 
-    bindingClass.button.setOnClickListener {
-        val result = bindingClass.edValue.text.toString().toInt()
-        when(result){
+        bindingClass.button.setOnClickListener {
+            val result = bindingClass.edValue.text.toString()
+            when (result) {
 
-            in 0..100 -> {
-                bindingClass.tvResult.visibility = View.VISIBLE
-                bindingClass.tvResult.text = "Нубяра полная"
-            }
+                "Viktor" -> {
+                    bindingClass.tvResult.visibility = View.VISIBLE
+                    bindingClass.tvResult.text = "Получите 50000"
+                }
 
-            in 101..1000 -> {
-                bindingClass.tvResult.visibility = View.VISIBLE
-                bindingClass.tvResult.text = "Начинающий"
-            }
+                "Petr" -> {
+                    bindingClass.tvResult.visibility = View.VISIBLE
+                    bindingClass.tvResult.text = "Получите 100000"
+                }
 
-            in 1001..100000 -> {
-                bindingClass.tvResult.visibility = View.VISIBLE
-                bindingClass.tvResult.text = "Продвинутый"
-            }
+                "Nikolay" -> {
+                    bindingClass.tvResult.visibility = View.VISIBLE
+                    bindingClass.tvResult.text = "Получите 110000"
+                }
 
-            in 100001..500000 -> {
-                bindingClass.tvResult.visibility = View.VISIBLE
-                bindingClass.tvResult.text = "Бывалый"
-            }
-
-            in 500001..1000000 -> {
-                bindingClass.tvResult.visibility = View.VISIBLE
-                bindingClass.tvResult.text = "Профи"
-            }
-
-            else ->{
-                bindingClass.tvResult.visibility = View.VISIBLE
-                bindingClass.tvResult.text = "Звезда!"
-
+                else -> {
+                    bindingClass.tvResult.visibility = View.VISIBLE
+                    bindingClass.tvResult.text = "Ошибка"
+                }
             }
         }
-
-
-
-        }
-
-
     }
-
-
-
 }
+
+
+
+
+
+
