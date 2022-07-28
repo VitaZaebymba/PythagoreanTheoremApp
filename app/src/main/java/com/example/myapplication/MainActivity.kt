@@ -10,8 +10,8 @@ import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
      lateinit var bindingClass: ActivityMainBinding
-     val a = 324
-     val b = 34
+     val maxPerson = 90
+     val currentPerson = 350
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,16 +19,19 @@ class MainActivity : AppCompatActivity() {
         setContentView(bindingClass.root)
 
         bindingClass.b1.setOnClickListener {
-            val result = a + b
-            bindingClass.txRes.text = result.toString()
+
+            if (maxPerson > currentPerson)
+                bindingClass.txRes.text = "Всё ок"
+            else bindingClass.txRes.text = "Превышено"
+
         }
+
         bindingClass.b2.setOnClickListener {
-            val result = a - b
-            bindingClass.txRes.text = result.toString()
+
         }
+
         bindingClass.b3.setOnClickListener {
-            val result = a * b
-            bindingClass.txRes.text = result.toString()
+
         }
 
 
