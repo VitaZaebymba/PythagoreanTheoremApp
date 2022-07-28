@@ -1,5 +1,6 @@
 package com.example.myapplication
 
+import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
@@ -11,7 +12,7 @@ import com.example.myapplication.databinding.ActivityMainBinding
 class MainActivity : AppCompatActivity() {
      lateinit var bindingClass: ActivityMainBinding
      val maxPerson = 90
-     val currentPerson = 350
+     val currentPerson = 35
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,9 +21,15 @@ class MainActivity : AppCompatActivity() {
 
         bindingClass.b1.setOnClickListener {
 
-            if (maxPerson > currentPerson)
+            if (maxPerson > currentPerson){
                 bindingClass.txRes.text = "Всё ок"
-            else bindingClass.txRes.text = "Превышено"
+                bindingClass.txRes.setBackgroundColor(Color.GREEN)
+            }
+
+            else {
+                bindingClass.txRes.text = "Превышено"
+                bindingClass.txRes.setBackgroundColor(Color.RED)
+            }
 
         }
 
