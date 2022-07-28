@@ -4,6 +4,7 @@ package com.example.myapplication
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import com.example.myapplication.constance.Const
 import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -21,19 +22,25 @@ class MainActivity : AppCompatActivity() {
                 Const.MANAGER -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
                     val tempText = "Получите ${Const.MANAGER_SUELDO}"
+                    if(bindingClass.pswd.text.toString() == Const.MANAGER_PASSWORD)
                     bindingClass.tvResult.text = tempText
+                    else  bindingClass.tvResult.text = "Неверный код"
                 }
 
                 Const.ASSISTENT -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
                     val tempText = "Получите ${Const.ASSISTENT_SUELDO}"
-                    bindingClass.tvResult.text = tempText
+                    if(bindingClass.pswd.text.toString() == Const.ASSISTENT_PASSWORD)
+                        bindingClass.tvResult.text = tempText
+                    else  bindingClass.tvResult.text = "Неверный код"
                 }
 
                 Const.DIRECTOR -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
                     val tempText = "Получите ${Const.DIRECTOR_SUELDO}"
-                    bindingClass.tvResult.text = tempText
+                    if(bindingClass.pswd.text.toString() == Const.DIRECTOR_PASSWORD)
+                        bindingClass.tvResult.text = tempText
+                    else  bindingClass.tvResult.text = "Неверный код"
                 }
 
                 else -> {
@@ -44,16 +51,7 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-    object Const {
-        const val MANAGER_SUELDO = 50000
-        const val ASSISTENT_SUELDO = 100000
-        const val DIRECTOR_SUELDO = 110000
 
-        const val MANAGER = "Viktor"
-        const val ASSISTENT = "Petr"
-        const val DIRECTOR = "Nikolay"
-
-    }
 }
 
 
