@@ -18,19 +18,22 @@ class MainActivity : AppCompatActivity() {
             val result = bindingClass.edValue.text.toString()
             when (result) {
 
-                "Viktor" -> {
+                Const.MANAGER -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
-                    bindingClass.tvResult.text = "Получите 50000"
+                    val tempText = "Получите ${Const.MANAGER_SUELDO}"
+                    bindingClass.tvResult.text = tempText
                 }
 
-                "Petr" -> {
+                Const.ASSISTENT -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
-                    bindingClass.tvResult.text = "Получите 100000"
+                    val tempText = "Получите ${Const.ASSISTENT_SUELDO}"
+                    bindingClass.tvResult.text = tempText
                 }
 
-                "Nikolay" -> {
+                Const.DIRECTOR -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
-                    bindingClass.tvResult.text = "Получите 110000"
+                    val tempText = "Получите ${Const.DIRECTOR_SUELDO}"
+                    bindingClass.tvResult.text = tempText
                 }
 
                 else -> {
@@ -39,6 +42,17 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+
+    }
+    object Const {
+        const val MANAGER_SUELDO = 50000
+        const val ASSISTENT_SUELDO = 100000
+        const val DIRECTOR_SUELDO = 110000
+
+        const val MANAGER = "Viktor"
+        const val ASSISTENT = "Petr"
+        const val DIRECTOR = "Nikolay"
+
     }
 }
 
