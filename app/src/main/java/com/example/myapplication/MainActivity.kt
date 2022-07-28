@@ -11,41 +11,55 @@ import com.example.myapplication.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
      lateinit var bindingClass: ActivityMainBinding
-     val maxPerson = 90
-     val currentPerson = 35
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         bindingClass = ActivityMainBinding.inflate(layoutInflater)
         setContentView(bindingClass.root)
 
-        bindingClass.b1.setOnClickListener {
+    bindingClass.button.setOnClickListener {
+        val result = bindingClass.edValue.text.toString().toInt()
+        when(result){
 
-            if (maxPerson > currentPerson){
-                bindingClass.txRes.text = "Всё ок"
-                bindingClass.txRes.setBackgroundColor(Color.GREEN)
+            in 0..100 -> {
+                bindingClass.tvResult.visibility = View.VISIBLE
+                bindingClass.tvResult.text = "Нубяра полная"
             }
 
-            else {
-                bindingClass.txRes.text = "Превышено"
-                bindingClass.txRes.setBackgroundColor(Color.RED)
+            in 101..1000 -> {
+                bindingClass.tvResult.visibility = View.VISIBLE
+                bindingClass.tvResult.text = "Начинающий"
             }
 
+            in 1001..100000 -> {
+                bindingClass.tvResult.visibility = View.VISIBLE
+                bindingClass.tvResult.text = "Продвинутый"
+            }
+
+            in 100001..500000 -> {
+                bindingClass.tvResult.visibility = View.VISIBLE
+                bindingClass.tvResult.text = "Бывалый"
+            }
+
+            in 500001..1000000 -> {
+                bindingClass.tvResult.visibility = View.VISIBLE
+                bindingClass.tvResult.text = "Профи"
+            }
+
+            else ->{
+                bindingClass.tvResult.visibility = View.VISIBLE
+                bindingClass.tvResult.text = "Звезда!"
+
+            }
         }
 
-        bindingClass.b2.setOnClickListener {
 
-        }
-
-        bindingClass.b3.setOnClickListener {
 
         }
 
 
     }
 
-    override fun onPause() {
-        super.onPause()
-    }
+
 
 }
