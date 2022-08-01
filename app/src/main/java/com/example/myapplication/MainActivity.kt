@@ -17,29 +17,37 @@ class MainActivity : AppCompatActivity() {
 
         bindingClass.button.setOnClickListener {
             val result = bindingClass.edValue.text.toString()
+            bindingClass.imageView.visibility = View.VISIBLE
+
             when (result) {
 
                 Const.MANAGER -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
                     val tempText = "Получите ${Const.MANAGER_SUELDO}"
-                    if(bindingClass.pswd.text.toString() == Const.MANAGER_PASSWORD)
+                    if(bindingClass.pswd.text.toString() == Const.MANAGER_PASSWORD){
                     bindingClass.tvResult.text = tempText
+                    bindingClass.imageView.setImageResource(R.drawable.viktor)
+                    }
                     else  bindingClass.tvResult.text = "Неверный код"
                 }
 
                 Const.ASSISTENT -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
                     val tempText = "Получите ${Const.ASSISTENT_SUELDO}"
-                    if(bindingClass.pswd.text.toString() == Const.ASSISTENT_PASSWORD)
+                    if(bindingClass.pswd.text.toString() == Const.ASSISTENT_PASSWORD){
                         bindingClass.tvResult.text = tempText
+                        bindingClass.imageView.setImageResource(R.drawable.petr)
+                    }
                     else  bindingClass.tvResult.text = "Неверный код"
                 }
 
                 Const.DIRECTOR -> {
                     bindingClass.tvResult.visibility = View.VISIBLE
                     val tempText = "Получите ${Const.DIRECTOR_SUELDO}"
-                    if(bindingClass.pswd.text.toString() == Const.DIRECTOR_PASSWORD)
+                    if(bindingClass.pswd.text.toString() == Const.DIRECTOR_PASSWORD){
                         bindingClass.tvResult.text = tempText
+                        bindingClass.imageView.setImageResource(R.drawable.nikolay)
+                    }
                     else  bindingClass.tvResult.text = "Неверный код"
                 }
 
