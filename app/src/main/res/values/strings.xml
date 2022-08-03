@@ -6,4 +6,7 @@
     <string name="input_b">Введите значение \"b\"</string>
     <string name="result">Результат</string>
 
+    <string name="welcome">Добро пожаловать в калькулятор Пифагора!</string>
+    <string name="button">Перейти к калькулятору</string>
+
 </resources>

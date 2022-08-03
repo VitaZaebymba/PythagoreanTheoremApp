@@ -5,6 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import com.example.myapplication.databinding.ActivityMainBinding
+import kotlin.math.pow
+import kotlin.math.sqrt
 
 class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
@@ -16,7 +18,11 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun onClickResult(view: View){
+        if (!isFieldEmpty()) {
+            val result =  getString(R.string.result_info) + getResult()
+            binding.Result.text =result
 
+        }
     }
 
     private fun isFieldEmpty(): Boolean {
@@ -25,8 +31,15 @@ class MainActivity : AppCompatActivity() {
             if (edB.text.isNullOrEmpty()) edB.error = "Поле должно быть заполнено"
             return  edA.text.isNullOrEmpty() || edB.text.isNullOrEmpty()
         }
-
-
+    }
+    private fun  getResult(): String {
+        val a: Double
+        val b: Double
+        binding.apply {
+            a = edA.text.toString().toDouble()
+            b = edB.text.toString().toDouble()
+        }
+        return sqrt(a.pow(2) + b.pow(2)).toString()
     }
 
 }
